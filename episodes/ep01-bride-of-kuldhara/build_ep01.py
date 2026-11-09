@@ -198,8 +198,10 @@ def build(p):
         if w["w"].rstrip('"”')[-1:] in ".,?!" or len(cur) >= 7: lines.append(cur); cur = []
     if cur: lines.append(cur)
     ev = []
-    for ln in lines:
+    for li, ln in enumerate(lines):
         s0, e0 = ln[0]["s2"] - 0.15, ln[-1]["e2"] + 0.35
+        if li + 1 < len(lines):  # never let two caption lines share the screen
+            e0 = min(e0, lines[li + 1][0]["s2"] - 0.2)
         txt, t = "", s0
         for w in ln:
             txt += f"{{\\k{max(0,int(round((w['s2']-t)*100)))}}}{{\\kf{max(1,int(round((w['e2']-w['s2'])*100)))}}}{w['w']} "
