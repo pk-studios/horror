@@ -1,20 +1,20 @@
 identity:
-  name: "Dead Letter Ledger"
+  name: "Lantern Man"
   category: custom
   mood: eerie, quiet, intimate, dread over shock
   pace: slow
-  best_for: "The Dead Letter Ledger horror-folklore channel: narrated long-form episodes (16:9) and the Shorts cut from them (9:16)"
+  best_for: "The Lantern Man horror series: a man who sees the dead, in present-day cases at legendary places. Narrated long-form (16:9) and Shorts (9:16)"
 
 visual_language:
   color_palette:
     primary: ["#151B3A", "#0E1328"]        # Ink-indigo night
-    # Lamp amber is the only warm light; sandstone and earth for places; cream for paper.
+    # Lantern amber is the only warm light; sandstone and earth for places; cream for captions.
     accent: ["#E8962E", "#B9824E", "#7A5A3A"]
     background: "#07090F"                  # Near-black night
-    text: "#EFE6D2"                        # Letter-paper cream
+    text: "#EFE6D2"                        # Caption cream
     muted: "#5E6478"                       # Dusty slate
   composition: low-key lighting, one warm light source per frame, deep negative space, subjects off-centre, layered foreground/midground/background
-  texture: dark painterly brushwork, fine film grain, aged paper, weathered stone
+  texture: dark painterly brushwork, fine film grain, weathered stone, mist
 
 typography:
   headings:
@@ -55,7 +55,7 @@ audio:
   voice_style: "the creator's own voice: close-mic, low, unhurried, as if reading aloud at night to one person"
   music_mood: "sparse dark ambient drones, low strings, no melodies over narration"
   music_volume: 0.12
-  sfx_style: "room tone, wind, distant dogs, paper rustle, pen scratch, oil-lamp flicker; no jump-scare stings — silence before the worst moment"
+  sfx_style: "room tone, wind, footsteps, the lantern's creak and flicker; no jump-scare stings — silence before the worst moment"
   ducking_threshold_db: -3
 
 asset_generation:
@@ -72,15 +72,15 @@ asset_generation:
   default_vignette: true
   consistency_anchors:
     - "Ink-indigo night (#151B3A) dominates every frame"
-    - "Exactly one warm amber light source (#E8962E) — usually an oil lamp (diya)"
-    - "A diya appears somewhere in every episode, sometimes hidden"
+    - "Exactly one warm amber light source (#E8962E) — usually his hand lantern"
+    - "The Lantern Man: 'a man in a long dark coat seen from behind, holding a hand lantern low' — always from behind, in silhouette or from the shoulders down; never his face"
+    - "Ghosts are never fully shown: pale, blurred, half-hidden, or only their effect (a door, a footprint, a reflection)"
     - "No clear human faces: figures from behind, in silhouette, or partly out of frame"
-    - "Letters and envelopes use real paper textures; their words are typed on as overlays, never generated"
     - "Places are real Indian locations rendered in sandstone, earth and weathered stone"
   multi_image_per_scene: true
   images_per_scene: 2
   image_variation_guidance: >
-    Generate 2 images per scene with small variations only: the lamp flame moved,
+    Generate 2 images per scene with small variations only: the lantern flame moved,
     mist shifted, or a shadow slightly longer. Keep composition and palette identical
     so the crossfade reads as the scene breathing, not a new shot.
 
@@ -104,8 +104,8 @@ quality_rules:
   - "Captions: cream serif, lower third, word-by-word timing"
   - "Slow push-ins and parallax only — no whip pans, no shaky cam"
   - "Never reuse a generated still from an earlier episode"
-  - "No text burned into generated images — letters, postmarks and titles are Remotion overlays"
-  - "The Record segment shows its sources on screen"
+  - "No text burned into generated images — titles and captions are Remotion overlays"
+  - "The real-legend segment shows its sources on screen"
   - "Vignette on every image scene"
 
 chart_palette:
