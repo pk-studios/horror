@@ -125,6 +125,7 @@ class GoogleImagen(BaseTool):
                     "gemini-2.5-flash-image",
                     "gemini-3-pro-image",
                     "gemini-3.1-flash-image",
+                    "gemini-3.1-flash-lite-image",
                     "gemini-nano-banana-2.1",
                 ],
                 "default": "gemini-nano-banana-2.1",
@@ -208,6 +209,9 @@ class GoogleImagen(BaseTool):
             raise PriceQuoteRequired(
                 "Gemini image pricing depends on input and output tokens/resolution; obtain a current quote"
             )
+        if model == "gemini-3.1-flash-lite-image":
+            # Nano Banana 2 Lite: third-party trackers list ~$0.034 per 1K image.
+            return 0.034 * n
         if model.startswith("gemini-"):
             # ~1290 output tokens per image at $30/1M tokens
             return 0.039 * n
