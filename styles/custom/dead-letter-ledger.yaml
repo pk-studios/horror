@@ -1,0 +1,122 @@
+identity:
+  name: "Dead Letter Ledger"
+  category: custom
+  mood: eerie, quiet, intimate, dread over shock
+  pace: slow
+  best_for: "The Dead Letter Ledger horror-folklore channel: narrated long-form episodes (16:9) and the Shorts cut from them (9:16)"
+
+visual_language:
+  color_palette:
+    primary: ["#151B3A", "#0E1328"]        # Ink-indigo night
+    # Lamp amber is the only warm light; sandstone and earth for places; cream for paper.
+    accent: ["#E8962E", "#B9824E", "#7A5A3A"]
+    background: "#07090F"                  # Near-black night
+    text: "#EFE6D2"                        # Letter-paper cream
+    muted: "#5E6478"                       # Dusty slate
+  composition: low-key lighting, one warm light source per frame, deep negative space, subjects off-centre, layered foreground/midground/background
+  texture: dark painterly brushwork, fine film grain, aged paper, weathered stone
+
+typography:
+  headings:
+    font: "Cormorant Garamond"
+    weight: 600
+    tracking: "0.04em"
+  body:
+    font: "EB Garamond"
+    weight: 400
+    line_height: 1.6
+  code:
+    font: "IBM Plex Mono"
+    weight: 400
+  stat_card:
+    font: "Cormorant Garamond"
+    weight: 600
+    size_multiplier: 2.6
+  scale_system: "perfect_fourth"
+  weight_matrix:
+    title: 600
+    heading: 600
+    body: 400
+    caption: 400
+
+motion:
+  transitions: [crossfade, dissolve, dip_to_black]
+  animation_style: "slow ease-in-out, no spring overshoot, no fast cuts, no shake"
+  pacing_rules:
+    min_scene_hold_seconds: 4
+    max_scene_hold_seconds: 9
+    text_card_hold_seconds: 4.5
+    stat_card_hold_seconds: 4
+    transition_duration_seconds: 1.2
+  entrance: "fade from black (opacity 0->1 over 1.2s) with slow push-in"
+  exit: "dip to black (opacity 1->0 over 1s)"
+
+audio:
+  voice_style: "the creator's own voice: close-mic, low, unhurried, as if reading aloud at night to one person"
+  music_mood: "sparse dark ambient drones, low strings, no melodies over narration"
+  music_volume: 0.12
+  sfx_style: "room tone, wind, distant dogs, paper rustle, pen scratch, oil-lamp flicker; no jump-scare stings — silence before the worst moment"
+  ducking_threshold_db: -3
+
+asset_generation:
+  # Model: google_imagen with gemini-3.1-flash-lite-image (~Rs 3 per image).
+  # Prompt = "[SCENE], " + this prefix, so the prefix comes after the scene description.
+  image_prompt_prefix: >
+    dark painterly cinematic still, deep indigo shadows,
+    a single warm amber light source, fine film grain, quiet and eerie,
+    no clear faces, no text,
+  image_negative_prompt: "bright daylight, saturated colours, cartoon, gore, blood, clear human faces, text, letters, watermark, jump-scare monster close-up"
+  scene_type: "cinematic_still"
+  default_particles: "dust"
+  default_particle_color: "#E8962E"
+  default_vignette: true
+  consistency_anchors:
+    - "Ink-indigo night (#151B3A) dominates every frame"
+    - "Exactly one warm amber light source (#E8962E) — usually an oil lamp (diya)"
+    - "A diya appears somewhere in every episode, sometimes hidden"
+    - "No clear human faces: figures from behind, in silhouette, or partly out of frame"
+    - "Letters and envelopes use real paper textures; their words are typed on as overlays, never generated"
+    - "Places are real Indian locations rendered in sandstone, earth and weathered stone"
+  multi_image_per_scene: true
+  images_per_scene: 2
+  image_variation_guidance: >
+    Generate 2 images per scene with small variations only: the lamp flame moved,
+    mist shifted, or a shadow slightly longer. Keep composition and palette identical
+    so the crossfade reads as the scene breathing, not a new shot.
+
+overlays:
+  stat_card:
+    bg: "rgba(7, 9, 15, 0.75)"
+    border: "#E8962E"
+    radius: 4
+    shadow: "0 4px 30px rgba(232, 150, 46, 0.12)"
+  key_term:
+    bg: "rgba(21, 27, 58, 0.6)"
+    text: "#EFE6D2"
+    radius: 2
+  section_title:
+    bg: "rgba(7, 9, 15, 0.65)"
+    text: "#EFE6D2"
+    accent: "#E8962E"
+
+quality_rules:
+  - "Minimum contrast ratio 4.5:1 for all text against backgrounds"
+  - "Captions: cream serif, lower third, word-by-word timing"
+  - "Slow push-ins and parallax only — no whip pans, no shaky cam"
+  - "Never reuse a generated still from an earlier episode"
+  - "No text burned into generated images — letters, postmarks and titles are Remotion overlays"
+  - "The Record segment shows its sources on screen"
+  - "Vignette on every image scene"
+
+chart_palette:
+  - "#E8962E"
+  - "#EFE6D2"
+  - "#B9824E"
+  - "#5E6478"
+  - "#7A5A3A"
+  - "#151B3A"
+
+color_rules:
+  harmony_type: "complementary"
+  contrast_validation: true
+  colorblind_safe: true
