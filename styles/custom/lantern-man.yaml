@@ -73,7 +73,8 @@ asset_generation:
   consistency_anchors:
     - "Ink-indigo night (#151B3A) dominates every frame"
     - "Exactly one warm amber light source (#E8962E) — usually his hand lantern"
-    - "The Lantern Man: 'a man in a long dark coat seen from behind, holding a hand lantern low' — always from behind, in silhouette or from the shoulders down; never his face"
+    - "The Lantern Man: always from behind, in silhouette or from the shoulders down; never his face. Pass assets/characters/lantern-man/ref_back_fullbody.jpg, ref_side_silhouette.jpg and ref_lantern_closeup.jpg as reference images (generation_mode: edit) for every shot he appears in"
+    - "His fixed details: ankle-length charcoal-black wool greatcoat, high turned-up collar, back half-belt with two buttons, buttoned turned-back cuffs, frayed damp hem, short messy curly dark hair, worn leather boots, brass hurricane lantern with one cracked glass pane held low in his LEFT hand"
     - "Ghosts are never fully shown: pale, blurred, half-hidden, or only their effect (a door, a footprint, a reflection)"
     - "No clear human faces: figures from behind, in silhouette, or partly out of frame"
     - "Places are real Indian locations rendered in sandstone, earth and weathered stone"
